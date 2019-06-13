@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
 
     // body parser elements for url and json //
-    // to handle the HTTP POST, this midlleware is needed.
+    // to handle the HTTP POST, this middleware is needed.
     // if not used, you have to individually manipulate all of the fields //
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
