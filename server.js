@@ -7,7 +7,7 @@ var exphbs = require("express-handlebars");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-    // static files //
+    // setting up the static files //
 app.use(express.static("public"));
 
     // body parser elements for url and json //
@@ -20,11 +20,11 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-    // these are the routes we will be using //
+    // these are the routes that are going to be used //
 var routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
-    // confirming connection with server //
+    // confirming connection with the server //
 app.listen(PORT, function() {
     console.log("server is listening on: http://localhost:" + PORT);
 });
