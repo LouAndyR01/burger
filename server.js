@@ -7,6 +7,10 @@ var exphbs = require("express-handlebars");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// app.listen(PORT, function() {
+//     console.log("Listening on: http://localhost:" + PORT)
+// });
+
     // setting up the static files //
 app.use(express.static("public"));
 
