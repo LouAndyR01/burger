@@ -1,21 +1,24 @@
     // requiring dependency //
 var mysql = require("mysql");
 
-    // create the connection to the database // 
-connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "smu2019",
-    database: "burgers_db"
-});
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-    // this will let me know if this is connected //
+} else {  
+    connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "smu2019",
+        database: "burgers_db"
+    });
+};
+
 connection.connect(function(err) {
-    if(err) {
-        console.log ("not connected: " + err.stack);
+    if (err) {
+        console.error("error connecting: " + err.stack);
         return;
     }
     console.log("connected as id " + connection.threadId);
 });
-    // exporting the module //
-module.exports = connection; 
+
+ module.exports = connection; 

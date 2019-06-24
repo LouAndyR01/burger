@@ -1,22 +1,21 @@
     // required dependencies //
 var express = require("express");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
 
-    // app variable to run express //
 var app = express();
+    // app variable to run express //
 var PORT = process.env.PORT || 3000;
 
-// app.listen(PORT, function() {
-//     console.log("Listening on: http://localhost:" + PORT)
-// });
+var exphbs = require("express-handlebars");
 
-    // setting up the static files //
+    // these are the routes that are going to be used //
+var routes = require("./controllers/burgers_controller.js");
+
+   // setting up the static files //
 app.use(express.static("public"));
 
     // body parser elements for url and json //
-    // to handle the HTTP POST, this middleware is needed.
-    // if not used, you have to individually manipulate all of the fields //
+    // to handle the HTTP POST, this middleware is needed //
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -24,13 +23,13 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-    // these are the routes that are going to be used //
-var routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
     // confirming connection with the server //
 app.listen(PORT, function() {
     console.log("server is listening on: http://localhost:" + PORT);
+
 });
+
 
 
