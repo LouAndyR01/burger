@@ -1,8 +1,7 @@
     // dependencies needed //
-var express = require('express');
-var burger = require('../models/burger.js');
+var express = require("express");
+var burger = require("../models/burger.js");
 
-    // routes are created...Monica was asking about my routes //
 var router = express.Router();
 
 router.get("/", function (req, res) {

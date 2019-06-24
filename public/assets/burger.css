@@ -1,0 +1,32 @@
+.jumbotron {
+    background-color: navy;
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+#newburger {
+    border-radius: 5px;
+}
+
+#color-reverse {
+    color: #fff;
+}
+
+#lefthead {
+    background-color: #1a9c75;
+    color: white;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+#eatbutton, #trashbutton {
+    float: right;
+}
+
+#righthead {
+    background-color: #c5b522;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+}
