@@ -25,7 +25,7 @@ var burger = {
     },
 
         // deletion of the burger //
-    deleteOne: function(conditon, callback) {
+    deleteOne: function(condition, callback) {
         orm.deleteOne("burgers", condition, function(res) {
             callback(res);
         });

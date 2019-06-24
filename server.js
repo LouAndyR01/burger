@@ -1,10 +1,13 @@
     // required dependencies //
 var express = require("express");
-var bodyParser = require("body-parser");
 
-var app = express();
     // app variable to run express //
 var PORT = process.env.PORT || 3000;
+
+var app = express();
+
+var bodyParser = require("body-parser");
+
 
 var exphbs = require("express-handlebars");
 
